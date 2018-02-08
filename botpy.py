@@ -1,8 +1,6 @@
 from syllables import syllables
 
 
-vowels="аАоОиИеЕёЁэЭыЫуУюЮяЯ"
-vowels_list=['а','и','е','ё','о','у','ы','э','ю','я',]
 def last_letter(word):
 	syl=syllables(word)
 	print (syl)
