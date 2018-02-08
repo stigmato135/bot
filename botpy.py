@@ -6,30 +6,30 @@ def last_letter(word):
 	print (syl)
 	if len(syl)==2:
 		for i in syl[0]:
-			if i=='о' or i=='О' or 'ё' or 'Ё':
+			if i.lower()=='о'or i.lower()=='ё':
 				syl[0]='хуё'
-			elif i=='а' or i=='А':
+			elif i.lower()=='а':
 				syl[0]='хуя'
-			elif i=='у' or i=='У':
+			elif i.lower()=='у':
 				syl[0]='хую'
-			elif i=='э' or i=='Э' or i=='е' or i=='Е':
+			elif i.lower()=='э' or i.lower()=='е':
 				syl[0]='хуе'
-			elif i=='Ы' or i=='Ы' or i=='и' or 'И':
+			elif i.lower()=='ы' or i.lower()=='и':
 				syl[0]='хуи'
 	else:
 		if syl[1]=='ишк':
 			syl[0]='ху'
 		else:
 			i=syl[1][0]
-			if i=='о' or i=='О':
+			if i.lower()=='о' or i.lower()=='ё':
 				syl[1]='ё'+syl[1][1:]
-			elif i=='а' or i=='А':
+			elif i.lower()=='а':
 				syl[1]='я'+syl[1][1:]
-			elif i=='у' or i=='У':
+			elif i=='у':
 				syl[1]='ю'+syl[1][1:]
-			elif i=='э' or i=='Э' or i=='е' or i=='Е':
+			elif i.lower()=='э' or i.lower()=='е':
 				syl[1]='е'+syl[1][1:]
-			elif i=='Ы' or i=='Ы' or i=='и' or 'И':
+			elif i.lower()=='ы' or i.lower()=='и':
 				syl[1]='и'+syl[1][1:]
 			syl[0]='ху'
 	word=''
