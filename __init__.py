@@ -17,6 +17,3 @@ print (token)
 bot = telepot.Bot(token)
 
 bot.message_loop(handle)
-
-while 1:
-    time.sleep(20)
