@@ -28,10 +28,7 @@ def syllables(word):
 				if any(word[k] in s for s in vowels_list):
 					syl.append(word[c:k])
 					c=k					
-				if any(word[k] in s for s in vowels_list) and k==len(word)-1:
-					syl=last_letter(syl,word,k)
-
-				if not any(word[k] in s for s in vowels_list) and k==len(word)-1:
+				if k==len(word)-1:
 					syl=last_letter(syl,word,k)
 				k+=1		
 		k+=1

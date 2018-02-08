@@ -1,5 +1,4 @@
 import telepot, time, subprocess
-from telepot.namedtuple import ReplyKeyboardMarkup, InlineKeyboardMarkup, KeyboardButton, InlineKeyboardButton
 from botpy import  last_letter
 from syllables import syllables
 
@@ -13,7 +12,6 @@ def handle(msg):
 f = open('token', 'r')
 token=f.read()
 f.close()
-print (token)
 bot = telepot.Bot(token)
 
 bot.message_loop(handle)

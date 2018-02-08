@@ -36,3 +36,4 @@ def last_letter(word):
 	word = ''.join(syl)
 	print (word)
 	return word
+	
