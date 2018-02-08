@@ -12,6 +12,10 @@ def handle(msg):
 f = open('token', 'r')
 token=f.read()
 f.close()
-bot = telepot.Bot(token)
 
+bot = telepot.Bot(token)
 bot.message_loop(handle)
+
+
+while 1:
+    time.sleep(20)
