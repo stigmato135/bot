@@ -1,7 +1,7 @@
 from syllables import syllables
 
 
-def last_letter(word):
+def substitution(word):
 	syl=syllables(word)
 	print (syl)
 	if len(syl)==2:
@@ -20,17 +20,17 @@ def last_letter(word):
 		if syl[1]=='ишк':
 			syl[0]='ху'
 		else:
-			i=syl[1][0]
+			i=syl[1][-1]
 			if i.lower()=='о' or i.lower()=='ё':
-				syl[1]='ё'+syl[1][1:]
+				syl[1]='ё'+syl[1][:-1]
 			elif i.lower()=='а':
-				syl[1]='я'+syl[1][1:]
+				syl[1]='я'+syl[1][:-1]
 			elif i=='у':
-				syl[1]='ю'+syl[1][1:]
+				syl[1]='ю'+syl[1][:-1]
 			elif i.lower()=='э' or i.lower()=='е':
-				syl[1]='е'+syl[1][1:]
+				syl[1]='е'+syl[1][:-1]
 			elif i.lower()=='ы' or i.lower()=='и':
-				syl[1]='и'+syl[1][1:]
+				syl[1]='и'+syl[1][:-1]
 			syl[0]='ху'
 	word=''
 	word = ''.join(syl)

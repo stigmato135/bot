@@ -1,5 +1,5 @@
 import telepot, time, subprocess
-from botpy import  last_letter
+from botpy import  substitution
 from syllables import syllables
 from tok import token
 
@@ -9,7 +9,7 @@ def handle(msg):
 
 	if (content_type == 'text'):
 		command = msg['text']
-		bot.sendMessage(chat_id, last_letter(command))				
+		bot.sendMessage(chat_id, substitution(command))				
 
 
 bot = telepot.Bot(token)
