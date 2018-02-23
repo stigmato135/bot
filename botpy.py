@@ -4,7 +4,7 @@ def bonding(syl, letter):
     syl[0] = 'ху'
     if letter.lower() == 'ё':
         syl[0] = syl[0]+'ё'
-    elif letter.lower() == 'а':
+    elif letter.lower() == 'а' or letter.lower() == 'я':
         syl[0] = syl[0]+'я'
     elif letter.lower() == 'у':
         syl[0] = syl[0] + 'ю'
@@ -17,34 +17,30 @@ def bonding(syl, letter):
 def substitution(word):
     syl = syllables(word)
     print (syl)
+    for slog in syl:
+        for letter in slog:
+            if letter == " ":
+                return ("Введите одно слово")
+    if len(syl)==1:
+        return ("Введите слово минимум из двух слогов")
     length = len(syl)
     if length == 5 or length == 6:
         del syl[0]
     if length == 7 or length == 8:
         del syl[0:2]
-    for id, letter in enumerate(syl[0]):
+    for  letter in syl[0]:
         if letter in vowels_list:
-            new_id = id
             i = letter
-    if length == 2:
-        if syl[1][0] not in vowels_list:
-            syl = bonding(syl, i)
-        else:
-            syl[0] = 'ху'
+    if syl[1][0] not in vowels_list:
+        syl=bonding(syl,i)
+    elif len(syl[1])==1:
+        del syl[1]
+        syl = bonding(syl, i)
     else:
-        if syl[1] == 'ишк':
-            syl[0] = 'ху'
-        elif new_id!=0 :
-            syl=bonding(syl,i)
-        elif new_id==0 and len(syl[1])>1:
-            syl[1]=syl[1][1:]
-            syl=bonding(syl,i)
-        else:
-            del syl[1]
-            syl=bonding(syl)
-
+        syl[0] = 'ху'
     word = ''
     word = ''.join(syl)
     print (word)
 
     return word
+

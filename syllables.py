@@ -18,9 +18,10 @@ def syllables(word):
             last_vowel = id
     for id_syl , syl in enumerate(syllables):
         current_syllable = ""
+        print (id_syl)
         for id_letter , letter in enumerate(syl):
             current_syllable += letter
-            if (letter == "ъ" or letter == "ь") and id_letter < last_vowel :
+            if (letter == "ъ" or letter == "ь") and (id_syl<len(syllables)-1 or (id_syl==len(syllables)-1 and id_letter < last_vowel )) :
                 current_syllable = syllables[id_syl - 1] + current_syllable
                 syllables[id_syl - 1] = current_syllable
                 syllables[id_syl] = syllables[id_syl][id_letter + 1:]
